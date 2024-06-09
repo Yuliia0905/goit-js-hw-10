@@ -50,6 +50,7 @@ startBtn.addEventListener('click', () => {
   intervalId = setInterval(() => {
     startBtn.disabled = true;
     input.disabled = true;
+    input.classList.add('active');
     startBtn.classList.remove('is-active');
     const currentDate = new Date();
     const diff = userSelectedDate - currentDate;
@@ -87,3 +88,11 @@ function convertMs(ms) {
 }
 
 // ===================================================================
+
+// ================== additionaly ===============================
+
+const body = document.querySelector('body');
+const murkup = `<section>
+      <a href="./index.html" class="nav-link-timer">Go to home</a>
+    </section>`;
+body.insertAdjacentHTML('afterbegin', murkup);
