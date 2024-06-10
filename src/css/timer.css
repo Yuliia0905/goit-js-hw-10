@@ -1,3 +1,7 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .flatpickr-input {
   font: inherit;
   border-radius: 4px;
@@ -6,7 +10,6 @@
   padding-left: 8px;
   cursor: pointer;
   border: 1px solid #808080;
-  display: flex;
 }
 
 .flatpickr-input:hover {
@@ -42,16 +45,19 @@
 }
 
 button {
-  border: none;
+  display: inline-flex;
   border-radius: 8px;
-  padding: 9px 16px;
-  min-width: 75px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
   background: #cfcfcf;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #989898;
+  border: none;
 }
 
 button.is-active:hover,
@@ -69,7 +75,7 @@ button.is-active:focus {
 .timer {
   display: flex;
   gap: 24px;
-
+  flex-direction: row;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -84,6 +90,7 @@ button.is-active:focus {
 }
 
 .value {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 1.2;
@@ -92,6 +99,8 @@ button.is-active:focus {
 }
 
 .label {
+  display: flex;
+  flex-wrap: wrap;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
