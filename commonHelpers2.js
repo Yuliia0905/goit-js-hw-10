@@ -1,0 +1,4 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */import{i as s}from"./assets/vendor-77e16229.js";const o=document.querySelector(".form");o.addEventListener("submit",i=>{i.preventDefault();const t=Math.abs(Number(o.delay.value)),r=o.state.value;new Promise((e,m)=>{setTimeout(()=>{r==="fulfilled"?e(t):m(t)},t)}).then(e=>{s.success({icon:"",messageColor:"white",position:"topRight",iconUrl:"../img/ok.svg",message:`✅ Fulfilled promise in ${e}ms`})}).catch(e=>{s.error({position:"topRight",icon:"",messageColor:"white",iconUrl:"../img/error.svg",message:`❌ Rejected promise in ${e}ms`})}),o.reset()});const n=document.querySelector("body"),a=`<section>
+      <a href="./index.html" class="nav-link-timer">Go to home</a>
+    </section>`;n.insertAdjacentHTML("afterbegin",a);
+//# sourceMappingURL=commonHelpers2.js.map
