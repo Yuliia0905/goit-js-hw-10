@@ -62,11 +62,11 @@ startBtn.addEventListener('click', () => {
   }, 1000);
 
   setTimeout(() => {
-    clearInterval(intervalId);
+    if (diff <= 0) clearInterval(intervalId);
     input.disabled = false;
     startBtn.disabled = true;
     startBtn.classList.remove('is-active');
-  }, userSelectedDate - Date.now());
+  }, userSelectedDate - new Date());
 });
 
 // ====================================================================
