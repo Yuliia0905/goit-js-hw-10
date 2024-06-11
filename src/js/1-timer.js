@@ -48,28 +48,25 @@ flatpickr(input, options);
 
 startBtn.addEventListener('click', () => {
   intervalId = setInterval(() => {
+    const currentDate = Date.now();
+    const diff = userSelectedDate - currentDate;
+    const timeLeft = convertMs(diff);
     startBtn.disabled = true;
     input.disabled = true;
     input.classList.add('active');
     startBtn.classList.remove('is-active');
-    const currentDate = new Date();
-    const diff = userSelectedDate - currentDate;
-    const timeLeft = convertMs(diff);
     daysBox.textContent = addLeadingZero(timeLeft.days);
     hoursBox.textContent = addLeadingZero(timeLeft.hours);
     minutesBox.textContent = addLeadingZero(timeLeft.minutes);
     secondsBox.textContent = addLeadingZero(timeLeft.seconds);
+    if (diff < 0) {
+      clearInterval(intervalId);
+      input.disabled = false;
+      startBtn.disabled = false;
+      startBtn.classList.remove('is-active');
+    }
   }, 1000);
-
-  setTimeout(() => {
-    if (diff <= 0) clearInterval(intervalId);
-    input.disabled = false;
-    startBtn.disabled = true;
-    startBtn.classList.remove('is-active');
-  }, userSelectedDate - new Date());
 });
-
-// ====================================================================
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
