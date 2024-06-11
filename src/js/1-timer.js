@@ -59,7 +59,7 @@ startBtn.addEventListener('click', () => {
     hoursBox.textContent = addLeadingZero(timeLeft.hours);
     minutesBox.textContent = addLeadingZero(timeLeft.minutes);
     secondsBox.textContent = addLeadingZero(timeLeft.seconds);
-    if (diff < 0) {
+    if (diff - 1000 < 0) {
       clearInterval(intervalId);
       input.disabled = false;
       startBtn.disabled = false;
